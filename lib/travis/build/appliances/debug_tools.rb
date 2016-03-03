@@ -34,7 +34,7 @@ module Travis
             sh.file "travis_debug.sh", template('travis_debug.sh')
             sh.chmod '+x', "travis_debug.sh", echo: false
 
-            sh.cmd "cat /dev/zero | ssh-keygen -q -N '' &> /dev/null", echo: false
+            sh.cmd "cat /dev/zero | ssh-keygen -q -N ''", echo: false
 
             sh.export 'PATH', "${PATH}:#{install_dir}", echo: false
 
